@@ -1,3 +1,5 @@
+import 'package:calisma/cards/pizza_card.dart';
+import 'package:calisma/pepperoni_pizza_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -230,6 +232,32 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PepperoniPizzaPage(),
+                    ),
+                  );
+                });
+              },
+              child: PizzaCard(
+                imgUrl: "images/pizza1.png",
+                name: "Pepperoni Pizza",
+                price: "\$10.00",
+                discount: "25",
+              ),
+            ),
+            SizedBox(height: 20),
+            PizzaCard(
+              imgUrl: "images/pizza2.png",
+              name: "Margherita Pizza",
+              price: "\$8.00",
+              discount: "20",
             ),
           ],
         ),
